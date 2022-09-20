@@ -59,18 +59,18 @@ jobs:
           default: patch
           WITH_V: true
           DEFAULT_BUMP: patch
-        - name: Discord Webhook Notify
-          uses: rjstone/discord-webhook-notify@v1.0.4
-          if: success()
-          with: 
-            severity: info
-            text: New version of Pokedex app deployed 
-            description: to https://fullstack-open-pokedex23-herokuapp.com by sandhya
-            webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
-          # - name: Test Failure
-          # uses: rjstone/discord-webhook-notify@v1
-        #   if: failure()
-        #   with: 
-        #     severity: error
-        #     details: test failed
-        #     webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+      - name: Discord Webhook Notify
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        if: success()
+        with: 
+          severity: info
+          text: New version of Pokedex app deployed 
+          description: to https://fullstack-open-pokedex23-herokuapp.com by sandhya
+          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+      - name: Test Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with: 
+          severity: error
+          details: test failed
+          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
