@@ -66,11 +66,11 @@ jobs:
           severity: info
           text: New version of Pokedex app deployed 
           description: to https://fullstack-open-pokedex23-herokuapp.com by sandhya
-          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: Test Failure
         uses: rjstone/discord-webhook-notify@v1
         if: failure()
         with: 
           severity: error
           details: test failed
-          webhookUrl: ${{ secrets.DISCORD_WEBOOK }}
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
