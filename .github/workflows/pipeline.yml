@@ -71,6 +71,7 @@ jobs:
         uses: rjstone/discord-webhook-notify@v1.0.4
         if: failure()
         with: 
+        
           severity: error
           details: test failed
           webhookUrl: ${{secrets.DISCORD_WEBHOOK}}
